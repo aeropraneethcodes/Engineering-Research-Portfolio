@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Selected engineering and research work by Praneeth Aravelli, NCSSM '28. Aerospace, scientific computing, and hands-on design.">
+  <title>Praneeth Aravelli | Engineering & Research</title>
+  <style>
+    :root{
+      --paper:#f5f4ef; --ink:#14242b; --muted:#64716f; --line:#ced2c9;
+      --lime:#e5f488; --signal:#c8e847; --deep:#16282f; --quiet:#e8ebe4;
+      --max:1240px; --mono:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+      --sans:Inter,"Segoe UI",Arial,Helvetica,sans-serif; --serif:Georgia,"Times New Roman",serif;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:93px}
+    body{background:var(--paper);color:var(--ink);margin:0;font-family:var(--sans);-webkit-font-smoothing:antialiased;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #789300;outline-offset:4px}
+    ::selection{background:var(--lime);color:var(--ink)}
+    .wrap{max-width:var(--max);margin:0 auto;padding-left:42px;padding-right:42px}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(245,244,239,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:24px}
+    .mark{font-family:var(--mono);font-size:18px;font-weight:800;letter-spacing:-1.7px;white-space:nowrap}
+    .mark em{font-style:normal;display:inline-block;background:var(--lime);width:10px;height:10px;border-radius:50%;margin-left:3px;vertical-align:1px}
+    .nav{display:flex;align-items:center;gap:34px}
+    .nav a{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;transition:opacity .2s}
+    .nav a:hover{opacity:.5}
+    .nav .contact-link{background:var(--ink);padding:13px 20px;color:var(--paper);border-radius:2px;display:flex;gap:12px;align-items:center}
+    .nav .contact-link:hover{opacity:1;background:#35505a}
+    .menu-btn{display:none;border:1px solid var(--line);background:transparent;border-radius:2px;padding:10px 14px;cursor:pointer}
+    .eyebrow,.tag,.meta,.label{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:650}
+    .eyebrow{display:flex;align-items:center;gap:12px;color:var(--muted)}
+    .eyebrow::before{content:"";height:2px;width:28px;background:var(--ink)}
+    .hero{border-bottom:1px solid var(--ink)}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(260px,.65fr);gap:70px;padding-top:98px;padding-bottom:116px;align-items:end}
+    .hero h1{font-family:var(--serif);font-weight:normal;font-size:clamp(58px,7.7vw,116px);line-height:.99;letter-spacing:-.068em;max-width:900px;margin:31px 0 39px}
+    .hero h1 i{font-weight:normal;font-style:italic;color:#64756d}
+    .hero-desc{font-size:19px;max-width:620px;line-height:1.66;color:#34464b;margin:0}
+    .hero-desc strong{color:var(--ink);font-weight:600}
+    .hero-bottom{margin-top:45px;display:flex;gap:29px;align-items:center;flex-wrap:wrap}
+    .text-link{font-size:13px;font-weight:800;letter-spacing:.02em;border-bottom:1.5px solid var(--ink);padding-bottom:5px;display:inline-flex;gap:18px;align-items:center}
+    .text-link:hover{color:#596b27;border-color:#596b27}
+    .quiet-note{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.025em}
+    .hero-aside{border-top:1px solid var(--ink);padding-top:16px;position:relative;min-height:305px;display:flex;flex-direction:column;justify-content:space-between}
+    .hero-aside .side-id{font-size:12px;color:#66716e;font-family:var(--mono);line-height:1.8}
+    .systems{width:100%;height:165px;display:block}
+    .hero-aside .caption{font:11px/1.7 var(--mono);color:var(--muted)}
+    .section-head{display:flex;justify-content:space-between;align-items:baseline;padding-top:88px;padding-bottom:29px;gap:25px}
+    .section-title{font-family:var(--serif);font-size:clamp(38px,4vw,62px);line-height:1.05;letter-spacing:-.05em;margin:0;font-weight:normal}
+    .section-meta{color:var(--muted);font:11px var(--mono);text-align:right}
+    .project-one{background:var(--deep);color:#ecf0e9;border-radius:3px;overflow:hidden}
+    .feature-layout{display:grid;grid-template-columns:1.07fr .93fr;min-height:510px}
+    .feature-text{padding:52px 56px 49px;display:flex;flex-direction:column;justify-content:space-between}
+    .num{font-family:var(--mono);font-size:12px;color:#b8c3b7;letter-spacing:.12em}
+    .feature-text h3{font-family:var(--serif);font-weight:normal;font-size:clamp(42px,4.3vw,67px);line-height:1.02;letter-spacing:-.045em;margin:30px 0 17px}
+    .feature-text .subhead{font-size:20px;max-width:440px;line-height:1.5;color:#c5d0c8;margin:0}
+    .feature-text .bodycopy{max-width:460px;font-size:14px;line-height:1.8;color:#d5ded5;margin:23px 0}
+    .pillline{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .pill{border:1px solid #708188;padding:7px 10px;border-radius:2px;font:10px var(--mono);text-transform:uppercase;letter-spacing:.035em;color:#d5dcd4}
+    .feature-graphic{background:#24353b;border-left:1px solid #506269;display:flex;flex-direction:column;padding:31px 38px;gap:22px}
+    .graphic-head{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:#c7d5c3;letter-spacing:.05em}
+    .ratio{font-size:clamp(64px,7vw,116px);font-family:var(--serif);font-weight:normal;line-height:1;color:var(--lime);letter-spacing:-.065em;margin-top:10px}
+    .ratio-label{font-size:13px;color:#e0e9da;line-height:1.6;max-width:300px}
+    .bars{display:grid;gap:26px;margin-top:24px}
+    .bar-set{display:grid;gap:9px}
+    .bar-label{display:flex;justify-content:space-between;gap:10px;font:11px var(--mono);color:#d6e1d3}
+    .bar-track{height:17px;background:#3c4c50;position:relative;overflow:hidden}
+    .bar-fill{height:100%;width:var(--width);background:var(--lime);transition:width 1.2s}
+    .bar-set:first-child .bar-fill{background:#92ada1}
+    .graphic-foot{margin-top:auto;padding-top:20px;border-top:1px solid #506269;font:10px/1.75 var(--mono);color:#b4c1b9}
+    .tech-strip{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-top:0;margin-bottom:30px}
+    .tech-strip div{padding:22px 30px;border-right:1px solid var(--line);min-height:95px}
+    .tech-strip div:last-child{border:0}
+    .stat-num{font-family:var(--serif);font-size:35px;line-height:1;color:var(--ink);letter-spacing:-.025em}
+    .stat-label{margin-top:10px;font:10px/1.4 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    .project-grid{display:grid;grid-template-columns:1fr 1fr;gap:23px;margin-top:22px}
+    .project-card{border:1px solid var(--line);display:flex;flex-direction:column;background:#f9f9f5;min-width:0}
+    .project-visual{background:#e6ebe3;min-height:255px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;padding:14px}
+    .project-visual.darker{background:#dfe6dc}
+    .project-visual svg{width:100%;height:250px;max-width:480px}
+    .diagram-note{position:absolute;bottom:17px;left:22px;font:10px var(--mono);color:#5e6c68;letter-spacing:.035em}
+    .card-copy{padding:30px 32px 28px;display:flex;flex-direction:column;gap:17px;flex:1}
+    .card-topline{display:flex;justify-content:space-between;gap:15px;font:10px var(--mono);text-transform:uppercase;color:#657169;letter-spacing:.06em}
+    .card-copy h3{font-family:var(--serif);font-size:34px;letter-spacing:-.035em;line-height:1.12;font-weight:normal;margin:0}
+    .card-copy p{font-size:14px;line-height:1.74;color:#465550;margin:0}
+    .card-bottom{margin-top:auto;padding-top:23px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+    .status{font:10px var(--mono);text-transform:uppercase;letter-spacing:.035em;color:#526660;display:inline-flex;align-items:center;gap:8px}
+    .status::before{content:"";display:inline-block;width:6px;height:6px;background:#839a50;border-radius:50%}
+    .method-panel{background:#ebece5;border:1px solid var(--line);padding:29px 35px;margin-top:24px}
+    details summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:14px;font-weight:750}
+    details summary::-webkit-details-marker{display:none}
+    details summary::after{content:"+";font-size:21px;font-weight:400}
+    details[open] summary::after{content:"−"}
+    .method-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding-top:25px;margin-top:19px;border-top:1px solid #c8ccc1}
+    .method-cols h4{font:11px var(--mono);text-transform:uppercase;letter-spacing:.075em;margin:0 0 12px}
+    .method-cols p{font-size:13px;line-height:1.76;color:#506058;margin:0}
+    .process{margin-top:106px;padding:76px 0 86px;background:#e9ebe3;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .process-top{display:grid;grid-template-columns:1fr 1fr;gap:65px;margin-bottom:52px}
+    .process-intro{font-size:18px;color:#45554d;line-height:1.7;max-width:510px;margin-top:5px}
+    .process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid #b9c0b4;border-bottom:1px solid #b9c0b4}
+    .process-step{padding:32px 34px 33px 0;border-right:1px solid #b9c0b4}
+    .process-step:not(:first-child){padding-left:32px}
+    .process-step:last-child{border-right:0}
+    .process-step .count{font:11px var(--mono);color:#607368}
+    .process-step h3{font-family:var(--serif);font-weight:normal;font-size:29px;letter-spacing:-.035em;margin:19px 0 12px}
+    .process-step p{font-size:13px;line-height:1.75;color:#56655e;margin:0}
+    .more{padding-top:92px;padding-bottom:91px}
+    .more-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:40px}
+    .more-item{border-top:1px solid var(--ink);padding-top:20px}
+    .more-item .lead{font:11px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+    .more-item h3{font-family:var(--serif);font-size:32px;font-weight:normal;letter-spacing:-.04em;margin:20px 0 12px}
+    .more-item p{font-size:14px;line-height:1.8;color:#516058;margin:0}
+    .more-item .smallfact{font:11px/1.65 var(--mono);color:#62736c;margin-top:20px}
+    .connect{background:var(--ink);color:var(--paper);padding:98px 0 80px}
+    .connect-grid{display:grid;grid-template-columns:1.5fr .5fr;gap:65px;align-items:end}
+    .connect h2{font-family:var(--serif);font-weight:normal;font-size:clamp(54px,7.5vw,105px);line-height:1.03;letter-spacing:-.06em;margin:24px 0}
+    .connect p{font-size:17px;color:#c6d3cf;max-width:560px;line-height:1.7}
+    .connect .cta{display:inline-flex;background:var(--lime);color:var(--ink);padding:17px 22px;font-size:13px;font-weight:750;gap:40px;align-items:center;margin-top:22px;transition:background .2s}
+    .connect .cta:hover{background:#f1ffc1}
+    .connect .aside-links{font:11px/2 var(--mono);color:#b0c0b8;text-align:left;border-top:1px solid #557070;padding-top:18px}
+    footer{background:var(--ink);color:#a7b8af;border-top:1px solid #365158;padding:27px 0;font:10px/1.8 var(--mono)}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .skip{position:absolute;top:-100px;left:20px;background:var(--lime);padding:12px;z-index:99}
+    .skip:focus{top:10px}
+    @media(max-width:980px){
+      .hero-grid{grid-template-columns:1fr;gap:44px;padding-top:69px;padding-bottom:65px}
+      .hero h1{font-size:clamp(56px,10vw,94px)}
+      .hero-aside{display:none}
+      .feature-layout{grid-template-columns:1fr 1fr}
+      .feature-text{padding:37px 34px}
+      .feature-graphic{padding:30px 28px}
+      .section-head{padding-top:62px}
+      .more-layout{gap:40px}
+    }
+    @media(max-width:700px){
+      .wrap{padding-left:22px;padding-right:22px}
+      .header-inner{min-height:66px}
+      .menu-btn{display:block}
+      .nav{display:none;position:absolute;top:66px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:22px;flex-direction:column;align-items:stretch;gap:21px;box-shadow:0 15px 15px rgba(0,0,0,.04)}
+      .nav.open{display:flex}
+      .nav .contact-link{justify-content:space-between}
+      .hero-grid{padding-top:60px}
+      .hero h1{font-size:clamp(53px,13.3vw,82px);letter-spacing:-.06em;margin:23px 0 25px}
+      .hero-desc{font-size:16px;line-height:1.75}
+      .section-head{align-items:end;gap:15px}
+      .section-title{font-size:46px}
+      .section-meta{font-size:10px}
+      .feature-layout{grid-template-columns:1fr}
+      .feature-text{padding:35px 28px}
+      .feature-text h3{font-size:54px;margin:20px 0}
+      .feature-graphic{min-height:350px;border-left:0;border-top:1px solid #506269;padding:30px}
+      .ratio{font-size:78px}
+      .tech-strip{grid-template-columns:1fr 1fr}
+      .tech-strip div{padding:18px 20px}
+      .tech-strip div:nth-child(2){border-right:0}
+      .tech-strip div:last-child{grid-column:1/-1;border-top:1px solid var(--line)}
+      .project-grid{grid-template-columns:1fr}
+      .project-visual{min-height:235px}
+      .method-cols{grid-template-columns:1fr;gap:20px}
+      .process{margin-top:70px;padding:64px 0}
+      .process-top,.more-layout,.connect-grid{grid-template-columns:1fr;gap:28px}
+      .process-steps{grid-template-columns:1fr}
+      .process-step,.process-step:not(:first-child){border-right:0;border-bottom:1px solid #b9c0b4;padding:22px 0}
+      .process-step:last-child{border-bottom:0}
+      .more{padding-top:58px;padding-bottom:60px}
+      .connect{padding:73px 0 58px}
+      .connect h2{font-size:68px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+    @media print{
+      .site-header,.menu-btn,.nav,.connect .cta{display:none!important}
+      .hero-grid{padding-top:35px;padding-bottom:35px}
+      .project-visual,.project-one,.tech-strip,.process,.connect{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+      .project-card,.project-one,.more-item{break-inside:avoid}
+      .section-head{padding-top:38px}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="mark" href="#top" aria-label="Praneeth Aravelli, back to top">PA<span style="color:#6a7975">/</span>28<em></em></a>
+      <button class="menu-btn" id="menu" aria-expanded="false" aria-controls="nav">Menu <span aria-hidden="true">☰</span></button>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="#work">Selected work</a>
+        <a href="#approach">Approach</a>
+        <a href="#background">Beyond the lab</a>
+        <a class="contact-link" href="#connect">Connect <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Praneeth Aravelli <span aria-hidden="true">/</span> NCSSM '28</div>
+          <h1>I like the part where the <i>prediction</i> breaks.</h1>
+          <p class="hero-desc">I'm a student drawn to aerospace engineering, computational models, and the awkward but useful gap between what we <strong>expect</strong> a system to do and what the evidence <strong>actually says</strong>.</p>
+          <div class="hero-bottom">
+            <a href="#work" class="text-link">Explore selected work <span aria-hidden="true">↗</span></a>
+            <span class="quiet-note">RESEARCH · DESIGN · TEST · REVISE</span>
+          </div>
+        </div>
+        <aside class="hero-aside" aria-label="Engineering approach schematic">
+          <div class="side-id">PORTFOLIO / 2026-27<br>ENGINEERING + RESEARCH</div>
+          <svg class="systems" viewBox="0 0 300 170" role="img" aria-label="Abstract comparison of a smooth model line and irregular measured observations">
+            <defs><pattern id="small-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M 24 0 L 0 0 0 24" fill="none" stroke="#c8cfc5" stroke-width="1"/></pattern></defs>
+            <rect width="300" height="170" fill="url(#small-grid)"/>
+            <path d="M 12 139 C 60 115, 95 53, 150 68 S 237 97,288 20" fill="none" stroke="#14242b" stroke-width="2.2"/>
+            <polyline points="16,136 57,118 91,95 125,76 160,88 189,83 221,90 253,51 288,35" fill="none" stroke="#77946b" stroke-width="1.2" stroke-dasharray="4 5"/>
+            <g fill="#14242b"><circle cx="16" cy="136" r="3"/><circle cx="57" cy="118" r="3"/><circle cx="91" cy="95" r="3"/><circle cx="125" cy="76" r="3"/><circle cx="160" cy="88" r="3"/><circle cx="189" cy="83" r="3"/><circle cx="221" cy="90" r="3"/><circle cx="253" cy="51" r="3"/><circle cx="288" cy="35" r="3"/></g>
+            <rect x="166" y="12" width="121" height="19" fill="#e5f488"/><text x="171" y="25" font-family="monospace" font-size="9" fill="#14242b">MODEL ≠ MEASURED</text>
+          </svg>
+          <div class="caption">01 / A working question<br>When should we trust a model?</div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="work" class="wrap" aria-labelledby="work-title">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">01 / Selected work</div>
+          <h2 class="section-title" id="work-title">Questions in motion.</h2>
+        </div>
+        <div class="section-meta">2025-27<br>SELECTED, NOT EXHAUSTIVE</div>
+      </div>
+      <article class="project-one" id="flamex">
+        <div class="feature-layout">
+          <div class="feature-text">
+            <div>
+              <div class="num">CASE STUDY 01 / COMPUTATIONAL RESEARCH</div>
+              <h3>FlameX<br>Intelligence.</h3>
+              <p class="subhead">Similar trends. Very different uncertainty.</p>
+              <p class="bodycopy">For the 2026 NASA Space Apps Challenge, our team examined publicly available NASA FLEX droplet-combustion experiments. I focused on what fuel-dependent variation reveals about model reliability, not just what a regression line predicts.</p>
+            </div>
+            <div class="pillline" aria-label="Project methods">
+              <span class="pill">Python</span><span class="pill">Regression</span><span class="pill">Robust statistics</span><span class="pill">Model validation</span>
+            </div>
+          </div>
+          <div class="feature-graphic" aria-label="Research finding showing n-heptane residual variance 3.38 times that of methanol">
+            <div class="graphic-head"><span>RESULT / 01</span><span>FLEX DATASET</span></div>
+            <div>
+              <div class="ratio">3.38×</div>
+              <div class="ratio-label">Higher residual variance for n-heptane than methanol in our fitted models.</div>
+            </div>
+            <div class="bars">
+              <div class="bar-set">
+                <div class="bar-label"><span>Methanol</span><span>0.006384</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--width:29.6%"></div></div>
+              </div>
+              <div class="bar-set">
+                <div class="bar-label"><span>n-Heptane</span><span>0.021546</span></div>
+                <div class="bar-track"><div class="bar-fill" style="--width:100%"></div></div>
+              </div>
+            </div>
+            <div class="graphic-foot">Residual variances are analysis outputs, not a claim of cause. The dataset does not directly measure soot formation. Independent student analysis of NASA-provided data; not a NASA affiliation or endorsement.</div>
+          </div>
+        </div>
+      </article>
+      <div class="tech-strip" role="group" aria-label="NASA FLEX project statistics">
+        <div><div class="stat-num">258</div><div class="stat-label">Complete observations analyzed</div></div>
+        <div><div class="stat-num">2</div><div class="stat-label">Fuel groups compared</div></div>
+        <div><div class="stat-num">2026</div><div class="stat-label">NASA Space Apps Challenge</div></div>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card" id="rocketry">
+          <div class="project-visual" aria-label="Stylized rocket flight schematic">
+            <svg viewBox="0 0 460 250" role="img" aria-label="Schematic of rocket outline, design reference lines and a curved projected trajectory; conceptual only">
+              <defs><pattern id="rgrid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="#c6d1c7" stroke-width=".8"/></pattern></defs>
+              <rect width="460" height="250" fill="url(#rgrid)"/>
+              <path d="M 22 210 Q 160 194 219 108 T 432 34" fill="none" stroke="#8d9e89" stroke-width="2" stroke-dasharray="4 6"/>
+              <g transform="translate(225 30)">
+                <path d="M0 0 Q17 21 17 53 L17 158 L-17 158 L-17 53 Q-17 21 0 0Z" fill="#f5f4ef" stroke="#1b343a" stroke-width="2.3"/>
+                <path d="M-17 122 L-49 173 L-17 163 Z" fill="#9caf8f" stroke="#1b343a" stroke-width="2"/>
+                <path d="M17 122 L49 173 L17 163 Z" fill="#9caf8f" stroke="#1b343a" stroke-width="2"/>
+                <rect x="-17" y="58" width="34" height="4" fill="#1b343a"/>
+                <line x1="-12" y1="84" x2="12" y2="84" stroke="#1b343a" stroke-dasharray="3 3"/>
+                <line x1="0" y1="176" x2="0" y2="200" stroke="#1b343a" stroke-dasharray="3 3"/>
+              </g>
+              <g fill="none" stroke="#667a6f" stroke-width="1.1"><path d="M275 85 H368"/><path d="M274 162 H381"/><path d="M173 98 H80"/></g>
+              <g font-size="10" font-family="monospace" fill="#385850"><text x="373" y="89">BODY</text><text x="384" y="166">FIN</text><text x="25" y="102">STABILITY</text></g>
+            </svg>
+            <div class="diagram-note">CONCEPTUAL ILLUSTRATION · NOT FINAL HARDWARE</div>
+          </div>
+          <div class="card-copy">
+            <div class="card-topline"><span>CASE STUDY 02</span><span>TEAM ENGINEERING</span></div>
+            <h3>Engineering a repeatable flight.</h3>
+            <p>With my NCSSM American Rocketry Challenge team, I'm working on flight simulation, airframe geometry, stability, and mass distribution. The harder question is not whether a design flies once, but whether its performance can be predicted and repeated.</p>
+            <div class="card-bottom"><span class="status">Design and simulation underway</span><span class="label">ARC '27</span></div>
+          </div>
+        </article>
+        <article class="project-card" id="dropguard">
+          <div class="project-visual darker">
+            <svg viewBox="0 0 460 250" role="img" aria-label="Conceptual diagram of a landing system with arrows representing impact loads; not a tested prototype">
+              <defs><pattern id="dgrid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="#c6d1c7" stroke-width=".8"/></pattern></defs>
+              <rect width="460" height="250" fill="url(#dgrid)"/>
+              <g transform="translate(230 52)" stroke="#19323a" stroke-width="2.2" fill="none">
+                <path d="M-100 -5 H100 M-64 -28 L-100 25 M64 -28 L100 25"/><circle cx="-94" cy="-1" r="28"/><circle cx="94" cy="-1" r="28"/>
+                <rect x="-52" y="-24" width="104" height="48" rx="10" fill="#f5f4ef"/><path d="M-13 -24 L0 -37 L13 -24"/>
+                <path d="M-32 24 L-48 49 M32 24 L48 49"/>
+              </g>
+              <g stroke="#708e6e" stroke-width="1.8" fill="none"><path d="M230 145 v43 m-5 -9 5 9 5 -9"/><path d="M178 145 v43 m-5 -9 5 9 5 -9"/><path d="M282 145 v43 m-5 -9 5 9 5 -9"/></g>
+              <path d="M135 203 H325" stroke="#18333b" stroke-width="2.2"/>
+              <rect x="153" y="191" width="154" height="12" fill="#a6b8a1" stroke="#19323a" stroke-width="1"/>
+              <path d="M153 191 l13 -10 l14 10 l13 -10 l14 10 l13 -10 l14 10 l13 -10 l14 10 l13 -10 l13 10 l13 -10" fill="none" stroke="#6e8971" stroke-width="1.4"/>
+              <g font-family="monospace" font-size="10" fill="#385850"><text x="20" y="220">IMPACT PATHWAY</text><text x="325" y="220">MASS TRADEOFF</text></g>
+            </svg>
+            <div class="diagram-note">CONCEPT SKETCH · PERFORMANCE NOT YET VALIDATED</div>
+          </div>
+          <div class="card-copy">
+            <div class="card-topline"><span>CASE STUDY 03</span><span>PRODUCT CONCEPT</span></div>
+            <h3>Protect the landing, not just the flight.</h3>
+            <p>DropGuard is our Conrad Challenge concept for mass-efficient passive drone impact protection. We're exploring how to absorb landing energy without making the aircraft unnecessarily heavy. This tradeoff still needs testing.</p>
+            <div class="card-bottom"><span class="status">Concept in development</span><span class="label">CONRAD '27</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="method-panel">
+        <details>
+          <summary>Open the research notebook: what the numbers do and do not show</summary>
+          <div class="method-cols">
+            <div><h4>01 / Question</h4><p>Do methanol and n-heptane combustion measurements show different levels of unexplained variability under the tested conditions?</p></div>
+            <div><h4>02 / Method</h4><p>Clean and analyze NASA FLEX data using regression, variance-comparison tests, robust inference, and pressure-group cross-validation.</p></div>
+            <div><h4>03 / Boundary</h4><p>Statistical differences do not, by themselves, establish the physical mechanism. The dataset lacks direct soot measurements, and results are specific to the analyzed experiments.</p></div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="process" id="approach">
+      <div class="wrap">
+        <div class="process-top">
+          <div><div class="eyebrow">02 / How I work</div><h2 class="section-title">Less certainty.<br>Better questions.</h2></div>
+          <div class="process-intro">I’m interested in aerospace systems, aerodynamics, and computational modeling. What connects my projects is a preference for understanding assumptions and failure modes before trusting an elegant answer.</div>
+        </div>
+        <div class="process-steps">
+          <div class="process-step"><span class="count">01 / FRAME</span><h3>State the assumption.</h3><p>What should the system do? Under which conditions? Which variables are measured, and which are only inferred?</p></div>
+          <div class="process-step"><span class="count">02 / TEST</span><h3>Put it against data.</h3><p>Use simulations, experiments, or existing datasets. Measure error and variation instead of hiding them.</p></div>
+          <div class="process-step"><span class="count">03 / REVISE</span><h3>Explain the mismatch.</h3><p>Distinguish evidence from interpretation, document limitations, and make the next test better.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap more" id="background">
+      <div class="eyebrow">03 / Beyond the analysis</div>
+      <h2 class="section-title">Teams. Tests. Teaching.</h2>
+      <div class="more-layout">
+        <div class="more-item"><div class="lead">Science Olympiad / Engineering events</div><h3>Building under constraints.</h3><p>Science Olympiad has pushed me toward iterative design and competitive testing, particularly through Electric Vehicle and other engineering events.</p><div class="smallfact">2025 REGIONAL · 2ND PLACE, ELECTRIC VEHICLE<br>2026 REGIONAL · 5TH PLACE, ELECTRIC VEHICLE<br>2026 ENLOE INVITATIONAL · 5TH PLACE, ELECTRIC VEHICLE</div></div>
+        <div class="more-item"><div class="lead">Elevate ED Tutoring / 2024-2026</div><h3>Making ideas understandable.</h3><p>I co-founded a peer tutoring initiative for students in grades 3 to 12, coordinated a team of six or more tutors, and helped support approximately fifteen students each week. Teaching changed how I explain technical ideas: clarity is a design constraint too.</p><div class="smallfact">CO-FOUNDER · JUN 2024-MAY 2026</div></div>
+      </div>
+    </section>
+
+    <section class="connect" id="connect">
+      <div class="wrap connect-grid">
+        <div>
+          <div class="eyebrow" style="color:#b1c2b9">04 / Say hello</div>
+          <h2>Have a hard<br><i style="font-weight:normal;color:#b4c8bf">problem?</i></h2>
+          <p>I'm interested in learning from researchers and engineers working in aerospace, fluid dynamics, applied physics, and scientific computing. If there's a project where careful analysis and a willingness to learn would help, I'd be glad to connect.</p>
+          <a class="cta" href="https://www.linkedin.com/in/praneeth-aravelli-a4b941316/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="aside-links">PRANEETH ARAVELLI<br>NORTH CAROLINA SCHOOL OF SCIENCE AND MATHEMATICS<br>CLASS OF 2028<br><br>SELECTED WORK · UPDATED NOVEMBER 2026<br>More documentation and evidence will be added as projects progress.</div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> PRANEETH ARAVELLI</span><span>BUILT TO SHOW THE WORK, NOT JUST THE OUTCOME.</span></div></footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menu = document.getElementById('menu');
+    const nav = document.getElementById('nav');
+    menu.addEventListener('click', () => {const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded',String(open));});
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');}));
+  </script>
+</body>
+</html>
